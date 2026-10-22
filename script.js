@@ -13,6 +13,16 @@ function addStudent() {
         return;
     }
 
+    if (age > 30) {
+        message.innerText = "overaged Limit: 16-30";
+        return;
+    }
+
+    if (age < 16) {
+        message.innerText = "under aged Limit: 16-30";
+        return;
+    }
+
     message.innerText = "";
     let student = {name, age, course};
 
@@ -35,8 +45,8 @@ function showStudents() {
     students.forEach(function(s, i) {
         output += `<div class="student">
             <b>${s.name}</b><p>Age: ${s.age} | Course: ${s.course}</p>
-            <button class="btn btn-primary btn-sm" onclick="editStudent(${i})">Edit</button>
-            <button class="btn btn-danger btn-sm" onclick="deleteStudent(${i})">Delete</button>
+            <button class="btn btn-primary btn-md" onclick="editStudent(${i})">Edit</button>
+            <button class="btn btn-danger btn-md" onclick="deleteStudent(${i})">Delete</button>
         </div>`;
     });
 
@@ -75,5 +85,5 @@ function cancelEdit() {
 
 showStudents();
 document.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") addStudent();
+    if (e.key === "enter") addStudent();
 });

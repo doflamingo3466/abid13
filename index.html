@@ -32,7 +32,8 @@
                     <input type="number" id="age" class="form-control mb-3" placeholder="Enter age" />
 
                     <label class="form-label">Course</label>
-                    <input type="text" id="course" class="form-control mb-1" placeholder="Enter course" />
+                    <input type="text" id="course" class="form-control mb-1" placeholder="Enter course" oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '')"/>
+                    
 
                     <p id="message" class="text-danger small mt-2 mb-3"></p>
 
